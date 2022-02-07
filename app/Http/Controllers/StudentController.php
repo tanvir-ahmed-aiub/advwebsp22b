@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
     //
     public function list(){
-        $students = array();
+        $students = Student::all(); //select * from students and also converts it into collection of student oobject
+        /*$students = array();
         for($i=0;$i<10;$i++){
             $student = array(
                 "id" => $i+1,
@@ -18,7 +20,12 @@ class StudentController extends Controller
             $student = (object)$student;
             $students[] = $student;
         }
-        
+        $student = array(
+            "id" => 11,
+            "name" =>"Tanvir Ahmed Shawon Ibn Masud",
+            "dept" => "CS"
+        );
+        $students[] = (object)$student;*/
         return view('student.list')->with('students',$students);
     }
     public function create(){
@@ -32,6 +39,12 @@ class StudentController extends Controller
         ->with('name',$name)
         ->with('id',$id)
         ->with('courses',$courses);
+    }
+    public function details(Request $req){
+        return view('student.get')
+        ->with('name',$req->name)
+        ->with('id',$req->id - 839)
+        ->with('courses',[]);;
     }
 
 }

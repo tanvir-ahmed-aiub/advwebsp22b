@@ -5,13 +5,18 @@
     <tr>
         <th>Name</th>
         <th>Id</th>
-        <th>Dept</th>
+        <th>Email</th>
+        <th>Username</th>
+        <th>Reg. Date</th>
+
     </tr>
     @foreach($students as $s)
         <tr>
-            <td>{{$s->name}}</td>
+            <td><a href="{{route('student.details',['id'=>$s->id+839,'name'=>$s->name])}}">{{$s->name}}</a></td>
             <td>{{$s->id}}</td>
-            <td>{{$s->dept}}</td>
+            <td>{{$s->email}}</td>
+            <td>{{$s->username}}</td>
+            <td>{{$s->created_at}}</td>
         </tr>
     @endforeach
 </table>
