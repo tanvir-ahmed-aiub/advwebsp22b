@@ -33,3 +33,4 @@ Route::get('/student/details/{id}/{name}',[StudentController::class,'details'])-
 
 Route::post('/register',[PagesController::class,'registersubmit'])->name('register.submit');
 Route::get('/students/list',[PagesController::class,'list'])->name('students.list');
+Route::get('/student/edit/{id}',[StudentController::class,'edit'])->name('students.edit');

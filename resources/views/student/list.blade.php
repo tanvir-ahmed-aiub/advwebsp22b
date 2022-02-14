@@ -17,6 +17,7 @@
             <td>{{$s->email}}</td>
             <td>{{$s->username}}</td>
             <td>{{$s->created_at}}</td>
+            <td><a class="btn btn-primary" href="{{route('students.edit',['id'=>encrypt($s->id)])}}">Edit</a></td>
         </tr>
     @endforeach
 </table>

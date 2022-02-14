@@ -14,6 +14,9 @@ class PagesController extends Controller
     public function register(){
         return view('home.logins.registration');
     }
+    public function list(){
+        
+    }
     public function registersubmit(Request $req)
     {
         /*$req->validate(
@@ -52,7 +55,7 @@ class PagesController extends Controller
         $st->username = $req->username;
         $st->email = $req->email;
         $st->password = $req->password;
-        $st->save();
+        $st->save(); //runs query in db
 
         return "<h1>The form is submitted with $req->name</h1>";
     }
