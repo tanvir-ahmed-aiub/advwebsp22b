@@ -50,7 +50,7 @@ class StudentController extends Controller
        
         $student = Student::where('id',decrypt($req->id))
         ->first();
-        return $student;
+        return $student->department;
         //generate edit page in blade
     }
 
