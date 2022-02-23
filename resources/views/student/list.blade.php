@@ -12,7 +12,7 @@
     </tr>
     @foreach($students as $s)
         <tr>
-            <td><a href="{{route('student.details',['id'=>$s->id+839,'name'=>$s->name])}}">{{$s->name}}</a></td>
+            <td><a href="{{route('student.details',['id'=>encrypt($s->id)])}}">{{$s->name}}</a></td>
             <td>{{$s->id}}</td>
             <td>{{$s->email}}</td>
             <td>{{$s->username}}</td>

@@ -1,16 +1,12 @@
 @extends('layouts.loggedin')
 @section('content')
     <h1>Get</h1>
-    <h4>Name : {{$name}}</h4>
-    <h4>Id : {{$id}}</h4>
+    <h4>Name : {{$s->name}}</h4>
+    <h4>Id : {{$s->id}}</h4>
+    <h4>Dept : {{$s->department->name}}</h4>
     <ol>
-        @for($i=0;$i<count($courses);$i++)
-            <li>{{$courses[$i]}}</li>
-        @endfor
-    </ol>
-    <ul>
-        @foreach($courses as $c)
-            <li>({{$loop->iteration}}) {{$c}}</li>
+        @foreach($s->courseStudent as $cs)
+            <li>{{$cs->course->name}} offerd by {{$cs->course->department->name}}</li>
         @endforeach
-    </ul>
+    </ol>
 @endsection

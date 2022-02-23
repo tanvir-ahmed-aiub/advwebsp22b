@@ -29,7 +29,7 @@ Route::get('/add/student',[StudentController::class,'create'])->name('student.cr
 Route::get('/student/list',[StudentController::class,'list']);
 Route::get('/student/get',[StudentController::class,'get']);
 
-Route::get('/student/details/{id}/{name}',[StudentController::class,'details'])->name('student.details');
+Route::get('/student/details/{id}',[StudentController::class,'details'])->name('student.details');
 
 Route::post('/register',[PagesController::class,'registersubmit'])->name('register.submit');
 Route::get('/students/list',[PagesController::class,'list'])->name('students.list');

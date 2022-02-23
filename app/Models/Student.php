@@ -21,4 +21,7 @@ class Student extends Model
         return $this->belongsTo(Department::class,'dept_id');
         //return $this->belongsTo(Customer::class,'ordered_by','username');
     }
+    public function courseStudent(){
+        return $this->hasMany(CourseStudent::class,'st_id');
+    }
 }

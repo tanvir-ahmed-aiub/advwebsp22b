@@ -41,10 +41,9 @@ class StudentController extends Controller
         ->with('courses',$courses);
     }
     public function details(Request $req){
-        return view('student.get')
-        ->with('name',$req->name)
-        ->with('id',$req->id - 839)
-        ->with('courses',[]);;
+        $student = Student::where('id',decrypt($req->id))
+        ->first();
+         return view('student.get')->with('s',$student);
     }
     public function edit(Request $req){
        
