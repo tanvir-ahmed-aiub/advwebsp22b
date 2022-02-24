@@ -1,6 +1,7 @@
 @extends('layouts.loggedin')
 @section('content')
 <h1>List</h1>
+<span class="text-success">{{Session::get('msg')}}</span>
 <table border="1">
     <tr>
         <th>Name</th>
